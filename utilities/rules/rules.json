@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "route_website_build",
+      "priority": 100,
+      "when": {
+        "any_keywords": ["landing page", "website", "html", "css", "hero section", "navbar"]
+      },
+      "then": {
+        "type": "delegate_agent",
+        "agent_name": "website_builder_simple",
+        "template": "{query}"
+      }
+    },
+    {
+      "id": "route_terminal_commands",
+      "priority": 90,
+      "when": {
+        "any_keywords": ["run", "terminal", "bash", "shell", "command", "create file", "mkdir", "ls", "cat"]
+      },
+      "then": {
+        "type": "force_tool",
+        "tool_name": "terminal_server",
+        "template": "{query}"
+      }
+    }
+  ]
+}

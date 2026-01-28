@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "terminal_server": {
+      "command": "wsl.exe",
+      "args": [
+        "-e",
+        "bash",
+        "-lc",
+        "cd /mnt/c/Users/Owner/mcp_a2a_master/mcp/servers/terminal_server && /home/wner/.local/bin/uv run terminal_server.py"
+      ]
+    },
+    "arithmetic_server":{ 
+      "command": "streamable_http",
+      "args": [
+        "http://localhost:8721/mcp/"
+      ]
+    }
+  }
+}
