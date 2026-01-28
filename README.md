@@ -45,3 +45,25 @@ If you get a port already in use error,
   kill process pid: kill -9 <PID>
 stop the existing process using that port and rerun the server.
 The host agent is responsible for loading MCP tools and orchestrating tasks.
+
+
+flowchart LR
+  U[User] --> FE[App/CLI]
+  FE --> A2AC[A2A Client]
+
+  A2AC --> HOST["Host Agent Orchestrator<br/>A2A Server"]
+
+  HOST --> REG["Agent Registry<br/>agent_registry.json"]
+  HOST --> CONN["Agent Connector<br/>A2A Client"]
+
+  CONN --> AG1["Website Builder Agent<br/>A2A Server"]
+  CONN --> AGN["Other Remote Agent<br/>A2A Server"]
+
+  HOST --> MCPC["MCP Connector<br/>reads mcp_config.json"]
+  MCPC --> MCPCLI["MCP Client"]
+
+  MCPCLI --> MCP1["MCP Server<br/>terminal_server"]
+  MCPCLI --> MCPN["MCP Server<br/>other tools"]
+
+  MCP1 --> T1["MCP Tools"]
+  MCPN --> TN["MCP Tools"]
