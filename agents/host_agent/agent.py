@@ -12,7 +12,7 @@ from google.adk.tools.function_tool import FunctionTool
 from google.adk.artifacts import InMemoryArtifactService
 from google.adk.sessions import InMemorySessionService
 from google.adk.memory.in_memory_memory_service import InMemoryMemoryService
-from utilities.rules.rule_engine import RuleEngine
+#from utilities.rules.rule_engine import RuleEngine
 
 import json
 from google.genai import types
@@ -40,7 +40,7 @@ class HostAgent:
     self._agent = None
     self._user_id = "host_agent_user"
     self._runner = None
-    self.rule_engine = RuleEngine() #continue from here to build rule engine
+    #self.rule_engine = RuleEngine() #continue from here to build rule engine
 
   async def create(self):
     self._agent = await self._build_agent()
